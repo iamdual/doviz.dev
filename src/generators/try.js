@@ -54,9 +54,13 @@ const Generator = async () => {
             return;
         }
 
-        const exchangeRate = parseFloat(currency.BanknoteSelling);
+        let exchangeRate = parseFloat(currency.BanknoteSelling);
         if (!exchangeRate || isNaN(exchangeRate)) {
             return;
+        }
+
+        if (typeof currency.Unit === 'number' && currency.Unit > 1) {
+            exchangeRate = exchangeRate / currency.Unit;
         }
 
         exchangeData[targetCurrency.concat(sourceCurrency)] = exchangeRate;
