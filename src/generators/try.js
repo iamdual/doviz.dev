@@ -36,21 +36,18 @@ const Generator = async () => {
         attributeNamePrefix: "@_"
     });
     let jObj = parser.parse(response.data);
-    //console.log(jObj.Tarih_Date.Currency);
 
-    if (typeof jObj.Tarih_Date.Currency === 'undefined') {
-        throw Error('Invalid response.');
+    if (typeof jObj?.Tarih_Date?.Currency === 'undefined') {
+        throw Error('Unexpected response.');
     }
 
     jObj.Tarih_Date.Currency.map(currency => {
-        //console.log(currency);
-
-        if (typeof currency['@_CurrencyCode'] !== 'string' || currency['@_CurrencyCode'].length !== 3) {
+        if (typeof currency?.['@_CurrencyCode'] !== 'string' || currency['@_CurrencyCode'].length !== 3) {
             return;
         }
         const targetCurrency = currency['@_CurrencyCode'];
 
-        if (typeof currency.BanknoteSelling === 'undefined' || !currency.BanknoteSelling) {
+        if (typeof currency?.BanknoteSelling === 'undefined' || !currency.BanknoteSelling) {
             return;
         }
 
@@ -59,7 +56,7 @@ const Generator = async () => {
             return;
         }
 
-        if (typeof currency.Unit === 'number' && currency.Unit > 1) {
+        if (typeof currency?.Unit === 'number' && currency.Unit > 1) {
             exchangeRate = exchangeRate / currency.Unit;
         }
 

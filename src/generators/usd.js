@@ -33,21 +33,18 @@ const Generator = async () => {
 
     const parser = new XMLParser();
     let jObj = parser.parse(response.data);
-    //console.log(jObj.channel.item);
 
-    if (typeof jObj.channel.item === 'undefined') {
-        throw Error('Invalid response.');
+    if (typeof jObj?.channel?.item === 'undefined') {
+        throw Error('Unexpected response.');
     }
 
     jObj.channel.item.map(currency => {
-        //console.log(currency);
-
-        if (typeof currency.targetCurrency !== 'string' || currency.targetCurrency.length !== 3) {
+        if (typeof currency?.targetCurrency !== 'string' || currency.targetCurrency.length !== 3) {
             return;
         }
         const targetCurrency = currency.targetCurrency;
 
-        if (typeof currency.exchangeRate === 'undefined' || !currency.exchangeRate) {
+        if (typeof currency?.exchangeRate === 'undefined' || !currency.exchangeRate) {
             return;
         }
         const exchangeRate = parseFloat(currency.exchangeRate);
@@ -61,7 +58,7 @@ const Generator = async () => {
 
     // Add metadata
     exchangeData['_meta'] = { created_at: new Date().toISOString() };
-    if (typeof jObj.channel.pubDate === 'string') {
+    if (typeof jObj?.channel?.pubDate === 'string') {
         exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(jObj.channel.pubDate).toISOString() };
     }
 

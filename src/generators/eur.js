@@ -36,21 +36,18 @@ const Generator = async () => {
         attributeNamePrefix: "@_"
     });
     let jObj = parser.parse(response.data);
-    //console.log(jObj['gesmes:Envelope'].Cube.Cube.Cube);
 
-    if (typeof jObj['gesmes:Envelope'].Cube.Cube.Cube === 'undefined') {
-        throw Error('Invalid response.');
+    if (typeof jObj?.['gesmes:Envelope']?.Cube?.Cube?.Cube === 'undefined') {
+        throw Error('Unexpected response.');
     }
 
     jObj['gesmes:Envelope'].Cube.Cube.Cube.map(currency => {
-        //console.log(currency);
-
-        if (typeof currency['@_currency'] !== 'string' || currency['@_currency'].length !== 3) {
+        if (typeof currency?.['@_currency'] !== 'string' || currency['@_currency'].length !== 3) {
             return;
         }
         const targetCurrency = currency['@_currency'];
 
-        if (typeof currency['@_rate'] === 'undefined' || !currency['@_rate']) {
+        if (typeof currency?.['@_rate'] === 'undefined' || !currency['@_rate']) {
             return;
         }
         const exchangeRate = parseFloat(currency['@_rate']);
