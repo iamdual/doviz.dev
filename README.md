@@ -1,6 +1,6 @@
 # Doviz.dev API
 
-This repository provides an exchange rate API via GitHub Pages. All exchange rates obtained from open sources (like central banks).
+This repository provides an exchange rate API via GitHub Pages. All exchange rates are obtained from open sources (like central banks).
 
 # Usage
 ```
@@ -35,16 +35,13 @@ curl https://doviz.dev/v1/{currency_code}.json
 
 # FAQ
 - What "`doviz`" means?
-> "Döviz" (dö·viz) is a forex term in Turkish word means "currency".
+> "Döviz" (dö·viz) is a Turkish word means "currency".
 
 - Is it free?
-> Yes. This is an open source project and everyone can access this API.
+> Yes. This is an open source project and everyone can access for free.
 
 - Is there any limit?
 > It depends to GitHub. Currently GitHub Pages bandwidth limit is 100GB monthly, [source says](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). So, please cache the response and use sparingly. Otherwise the service may be suspended.
 
-- Which sources I can use?
+- Which sources using?
 > We use open sources to obtain exchange rate limit. Central banks provides exchange data. Source lists: [#1](http://www.floatrates.com/currency-sources.html)
-
-- I want to use an unsupported currency.
-> Please feel free to create pull request or [create an issue](https://github.com/iamdual/doviz.dev/issues).
