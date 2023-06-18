@@ -38,6 +38,7 @@ The currency code must be lowercase. Supported currencies are listed below.
 | EUR      | https://doviz.dev/v1/eur.json |
 | TRY      | https://doviz.dev/v1/try.json |
 | AUD      | https://doviz.dev/v1/aud.json |
+| DKK      | https://doviz.dev/v1/dkk.json |
 
 # F.A.Q.
 - **Is it free to use?**

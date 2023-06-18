@@ -7,7 +7,7 @@
 const fs = require('fs');
 
 const outputDir = __dirname + '/../public/v1/';
-const generators = ['try', 'eur', 'usd', 'aud'];
+const generators = ['try', 'eur', 'usd', 'aud', 'dkk'];
 
 let exchangeData = {};
 
