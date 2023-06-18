@@ -38,16 +38,16 @@ The currency code must be lowercase. Supported currencies are listed below.
 | TRY      | https://doviz.dev/v1/try.json |
 
 # F.A.Q.
-- What "`doviz`" means?
-> "Döviz" (dö·viz) is a Turkish word means "currency".
-
-- Is it free?
+- **Is it free to use?**
 > Yes. This is an open source project and everyone can access for free.
 
-- Is there any limit?
-> It depends to GitHub. Currently GitHub Pages bandwidth limit is 100GB monthly, [GitHub says](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). So, please cache the response and use sparingly. Otherwise the service may be suspended.
+- **Is there any limit?**
+> It depends to GitHub. Currently GitHub Pages bandwidth limit is 100GB monthly, [GitHub says](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). So, please cache the response and use sparingly.
 
-- Which sources using?
+- **What "doviz" means?**
+> "Döviz" (dö·viz) is a Turkish word means "foreign currency".
+
+- **Which sources using?**
 > We use several open sources to obtain exchange rates. Some sources we use are listed [here](https://github.com/iamdual/doviz.dev/blob/master/SOURCES.md).
 
 # Contributing

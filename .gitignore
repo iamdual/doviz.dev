@@ -1,4 +1,3 @@
 node_modules/
-public/*
-!public/v1/.gitkeep
+public/
 .DS_Store

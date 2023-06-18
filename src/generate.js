@@ -11,6 +11,10 @@ const generators = ['try', 'eur', 'usd'];
 
 let exchangeData = {};
 
+if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+}
+
 (async () => {
 
     for (let i in generators) {
