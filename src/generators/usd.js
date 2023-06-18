@@ -57,7 +57,7 @@ const Generator = async () => {
     });
 
     // Add metadata
-    exchangeData['_meta'] = { created_at: new Date().toISOString() };
+    exchangeData['_meta'] = { generated_at: new Date().toISOString() };
     if (typeof jObj?.channel?.pubDate === 'string') {
         exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(jObj.channel.pubDate).toISOString() };
     }

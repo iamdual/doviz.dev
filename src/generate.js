@@ -32,7 +32,7 @@ if (!fs.existsSync(outputDir)) {
         }
     }
 
-    exchangeData['_meta'] = { 'created_at': new Date().toISOString() };
+    exchangeData['_meta'] = { 'generated_at': new Date().toISOString() };
     fs.writeFileSync(outputDir + '_all.json', JSON.stringify(exchangeData));
 
     console.log('[OK] Exchange rates has been updated!');

@@ -65,7 +65,10 @@ const Generator = async () => {
     });
 
     // Add metadata
-    exchangeData['_meta'] = { created_at: new Date().toISOString() };
+    exchangeData['_meta'] = { generated_at: new Date().toISOString() };
+    if (typeof jObj.Tarih_Date?.['@_Date'] === 'string') {
+        exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(jObj.Tarih_Date['@_Date'].concat(' 15:30:00 GMT+0300')).toISOString() };
+    }
 
     return exchangeData;
 }

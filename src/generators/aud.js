@@ -65,7 +65,7 @@ const Generator = async () => {
     });
 
     // Add metadata
-    exchangeData['_meta'] = { created_at: new Date().toISOString() };
+    exchangeData['_meta'] = { generated_at: new Date().toISOString() };
     if (typeof jObj?.['rdf:RDF']?.['channel']?.['dc:date'] === 'string') {
         exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(jObj['rdf:RDF']['channel']['dc:date']).toISOString() };
     }

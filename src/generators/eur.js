@@ -60,7 +60,10 @@ const Generator = async () => {
     });
 
     // Add metadata
-    exchangeData['_meta'] = { created_at: new Date().toISOString() };
+    exchangeData['_meta'] = { generated_at: new Date().toISOString() };
+    if (typeof jObj['gesmes:Envelope'].Cube.Cube?.['@_time'] === 'string') {
+        exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(jObj['gesmes:Envelope'].Cube.Cube['@_time'].concat(' 16:00:00 GMT+0100')).toISOString() };
+    }
 
     return exchangeData;
 }

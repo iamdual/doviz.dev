@@ -24,7 +24,8 @@ The currency code must be lowercase. Supported currencies are listed below.
   "JPYTRY": 0.168983,
   "TRYJPY": 5.917755040447856,
   "_meta": {
-    "created_at": "2023-06-18T12:47:49.491Z"
+    "generated_at": "2023-06-18T16:24:03.281Z",
+    "updated_at": "2023-06-16T12:30:00.000Z"
   }
 }
 ```
