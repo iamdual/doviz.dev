@@ -1,12 +1,17 @@
 name: Deploy Doviz.dev to GitHub Pages
 
 on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Runs on pushes targeting the default branch
   push:
     branches:
       - master
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  # Trigger workflow every 10 minutes
+  schedule:
+    - cron: '*/10 * * * *'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -55,15 +60,6 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
-      - name: Restore cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            public
-            .cache
-          key: ${{ runner.os }}-doviz-dev-build-${{ hashFiles('public') }}
-          restore-keys: |
-            ${{ runner.os }}-doviz-dev-build-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Doviz.dev
