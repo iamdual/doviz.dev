@@ -13,6 +13,8 @@ const converter = new showdown.Converter({
 
 const head = `<!DOCTYPE html>
 <html><head>
+<meta charset="utf-8" />
+<title>Doviz.dev API</title>
 <style>
 body {
   margin: 0;
@@ -43,7 +45,7 @@ table, th, td {
 }
 
 th, td {
-  padding: 4px 20px;
+  padding: 8px 20px;
 }
 
 a {
