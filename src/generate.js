@@ -9,33 +9,20 @@ const fs = require('fs');
 const outputDir = __dirname + '/../public/v1/';
 const generators = ['try', 'eur', 'usd', 'aud', 'dkk'];
 
-let exchangeData = {};
-
 if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
 }
 
-(async () => {
+generators.map(name => {
 
-    for (let i in generators) {
+    const generator = require('./generators/' + name);
 
-        const generator = require('./generators/' + generators[i]);
+    generator().then(output => {
+        fs.writeFileSync(outputDir + name + '.json', JSON.stringify(output));
+        console.log('[OK] Exchange rates for ' + name.toUpperCase() + ' has been updated!');
+    }).catch(error => {
+        console.log('[ERROR] An error occurred while fetching data from ' + name.toUpperCase() + '!');
+        console.log(error);
+    });
 
-        try {
-            const output = await generator();
-            exchangeData = { ...output, ...exchangeData };
-
-            fs.writeFileSync(outputDir + generators[i] + '.json', JSON.stringify(output));
-
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    exchangeData['_meta'] = { 'generated_at': new Date().toISOString() };
-    fs.writeFileSync(outputDir + '_all.json', JSON.stringify(exchangeData));
-
-    console.log('[OK] Exchange rates has been updated!');
-    process.exit(0);
-
-})();
+});
