@@ -1,5 +1,7 @@
 # [Doviz.dev API](https://github.com/iamdual/doviz.dev)
 
+[![Deploy Doviz.dev to GitHub Pages](https://github.com/iamdual/doviz.dev/actions/workflows/doviz-dev.yml/badge.svg)](https://github.com/iamdual/doviz.dev/actions/workflows/doviz-dev.yml)
+
 This repository provides an exchange rate API via GitHub Pages. All exchange rates are obtained from open sources (like central banks).
 
 # Usage
