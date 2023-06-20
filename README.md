@@ -61,3 +61,6 @@ The currency code must be lowercase. Supported currencies are listed below.
 
 # Contributing
 Please feel free to create pull request or [create an issue](https://github.com/iamdual/doviz.dev/issues).
+
+# License
+Apache License 2.0 - [Ekin Karadeniz](https://github.com/iamdual) ©2023
