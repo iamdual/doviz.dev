@@ -14,6 +14,7 @@ const converter = new showdown.Converter({
 const head = `<!DOCTYPE html>
 <html><head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <title>Doviz.dev API</title>
 <style>
 body {
