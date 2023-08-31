@@ -1,5 +1,5 @@
 /**
- * Doviz.dev Generator Script
+ * Doviz.dev API Generator Script
  * @link https://github.com/iamdual/doviz.dev
  * @author Ekin Karadeniz <iamdual@icloud.com>
  */

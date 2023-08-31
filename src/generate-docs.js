@@ -1,10 +1,17 @@
 /**
- * Generate index.html from README.md
+ * Doviz.dev Documentation Generator Script
  * @link https://github.com/iamdual/doviz.dev
  * @author Ekin Karadeniz <iamdual@icloud.com>
  */
 
 const fs = require('fs');
+
+const outputDir = __dirname + '/../public/';
+
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir, { recursive: true });
+}
+
 const showdown = require('showdown');
 showdown.setFlavor('github');
 const converter = new showdown.Converter({
