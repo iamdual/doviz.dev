@@ -1,16 +1,19 @@
 # [Doviz.dev API](https://github.com/iamdual/doviz.dev)
 
-[![Deploy Doviz.dev to GitHub Pages](https://github.com/iamdual/doviz.dev/actions/workflows/doviz-dev.yml/badge.svg)](https://github.com/iamdual/doviz.dev/actions/workflows/doviz-dev.yml)
+[![Deploy Doviz.dev to GitHub Pages](https://github.com/iamdual/doviz.dev/actions/workflows/doviz.dev.yml/badge.svg)](https://github.com/iamdual/doviz.dev/actions/workflows/doviz-dev.yml)
 
 This repository provides an exchange rate API via GitHub Pages. All exchange rates are obtained from open sources (like central banks).
 
 # Usage
+
 ```
 curl https://doviz.dev/v1/{currency_code}.json
 ```
+
 The currency code must be lowercase. Supported currencies are listed below.
 
 ### Example response:
+
 ```json
 {
   "USDTRY": 23.7169,
@@ -35,7 +38,7 @@ The currency code must be lowercase. Supported currencies are listed below.
 # Supported currencies
 
 | Currency | Link                          |
-|----------|-------------------------------|
+| -------- | ----------------------------- |
 | USD      | https://doviz.dev/v1/usd.json |
 | EUR      | https://doviz.dev/v1/eur.json |
 | TRY      | https://doviz.dev/v1/try.json |
@@ -44,23 +47,30 @@ The currency code must be lowercase. Supported currencies are listed below.
 | CAD      | https://doviz.dev/v1/cad.json |
 
 # F.A.Q.
+
 - **Is it free to use?**
-> Yes. This is an open source project and everyone can access for free.
+
+  > Yes. This is an open source project and everyone can access for free.
 
 - **Is there any limit?**
-> It depends to GitHub. Currently GitHub Pages bandwidth limit is 100GB monthly, [GitHub says](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). So, please cache the response and use sparingly.
+
+  > It depends to GitHub. Currently GitHub Pages bandwidth limit is 100GB monthly, [GitHub says](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). So, please cache the response and use sparingly.
 
 - **How often is it updated?**
-> It depends to the sources. Exchange rates are usually updated daily for central banks. But we fetch data and generate JSON files every 10 minutes.
+
+  > It depends to the sources. Exchange rates are usually updated daily for central banks. But we fetch data and generate JSON files every 10 minutes.
 
 - **What "doviz" means?**
-> "Döviz" (dö·viz) is a Turkish word means "foreign currency".
+
+  > "Döviz" (dö·viz) is a Turkish word means "foreign currency".
 
 - **Which sources using?**
-> We use several open sources to obtain exchange rates. Some sources we use are listed [here](https://github.com/iamdual/doviz.dev/blob/master/SOURCES.md).
+  > We use several open sources to obtain exchange rates. Some sources we use are listed [here](https://github.com/iamdual/doviz.dev/blob/master/SOURCES.md).
 
 # Contributing
+
 Please feel free to create pull request or [create an issue](https://github.com/iamdual/doviz.dev/issues).
 
 # License
+
 Apache License 2.0 - [Ekin Karadeniz](https://github.com/iamdual) ©2023

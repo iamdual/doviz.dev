@@ -11,7 +11,7 @@ on:
 
   # Trigger workflow every 10 minutes
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: "*/10 * * * *"
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -21,7 +21,7 @@ permissions:
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
 
 # Default to bash
@@ -63,7 +63,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Doviz.dev
         env:
-          PREFIX_PATHS: 'true'
+          PREFIX_PATHS: "true"
         run: ${{ steps.detect-package-manager.outputs.manager }} run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
