@@ -37,14 +37,14 @@ The currency code must be lowercase. Supported currencies are listed below.
 
 # Supported currencies
 
-| Currency | Link                          |
-| -------- | ----------------------------- |
-| USD      | https://doviz.dev/v1/usd.json |
-| EUR      | https://doviz.dev/v1/eur.json |
-| TRY      | https://doviz.dev/v1/try.json |
-| AUD      | https://doviz.dev/v1/aud.json |
-| DKK      | https://doviz.dev/v1/dkk.json |
-| CAD      | https://doviz.dev/v1/cad.json |
+| Code | Source            | API Link                      |
+|------|-------------------|-------------------------------|
+| USD  | floatrates.com    | https://doviz.dev/v1/usd.json |
+| EUR  | ecb.europa.eu     | https://doviz.dev/v1/eur.json |
+| TRY  | tcmb.gov.tr       | https://doviz.dev/v1/try.json |
+| AUD  | rba.gov.au        | https://doviz.dev/v1/aud.json |
+| DKK  | nationalbanken.dk | https://doviz.dev/v1/dkk.json |
+| CAD  | bankofcanada.ca   | https://doviz.dev/v1/cad.json |
 
 # F.A.Q.
 
