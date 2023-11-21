@@ -50,15 +50,19 @@ The currency code must be lowercase. Supported currencies are listed below.
 
 - **Is it free to use?**
 
-  > Yes. This is an open source project and everyone can access for free.
+  > Yes. This is an open source project and everyone can access it for free.
 
 - **Is there any limit?**
 
-  > It depends to GitHub. Currently GitHub Pages bandwidth limit is 100GB monthly, [GitHub says](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). So, please cache the response and use sparingly.
+  > It depends on GitHub. Currently GitHub Pages bandwidth limit is 100GB monthly, [GitHub says](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). So, please cache the response and use sparingly.
 
 - **How often is it updated?**
 
-  > It depends to the sources. Exchange rates are usually updated daily for central banks. But we fetch data and generate JSON files every 10 minutes.
+  > It depends on the sources. Exchange rates are usually updated daily for central banks. But we fetch data and generate JSON files every 10 minutes.
+
+- **Why would we need this?**
+
+  > Doviz.dev converts data with varying structures from different sources into a standard format.
 
 - **What "doviz" means?**
 
