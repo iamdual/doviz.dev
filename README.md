@@ -58,7 +58,11 @@ The currency code must be lowercase. Supported currencies are listed below.
 
 - **How often is it updated?**
 
-  > It depends to the sources. Exchange rates are usually updated daily for central banks. But we fetch data and generate JSON files every 10 minutes.
+  > It depends on the sources. Exchange rates are usually updated daily for central banks. But we fetch data and generate JSON files every 10 minutes.
+
+- **Why would we need this?**
+
+  > Doviz.dev converts data with varying structures from different sources into a standard format.
 
 - **Why would we need this?**
 
