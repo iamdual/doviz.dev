@@ -8,6 +8,7 @@ const https = require('https');
 const crypto = require('crypto');
 const axios = require('axios');
 const { XMLParser } = require('fast-xml-parser');
+const Meta = require('../meta');
 
 const sourceCurrency = 'USD';
 let exchangeData = {};
@@ -58,10 +59,11 @@ const Generator = async () => {
     });
 
     // Add metadata
-    exchangeData['_meta'] = { generated_at: new Date().toISOString() };
+    const meta = new Meta(sourceCurrency, 'floatrates.com');
     if (typeof jObj?.channel?.pubDate === 'string') {
-        exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(jObj.channel.pubDate).toISOString() };
+        meta.setUpdatedAt(jObj.channel.pubDate);
     }
+    exchangeData['_meta'] = meta;
 
     return exchangeData;
 }

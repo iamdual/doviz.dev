@@ -7,6 +7,7 @@
 const https = require('https');
 const crypto = require('crypto');
 const axios = require('axios');
+const Meta = require('../meta');
 
 const sourceCurrency = 'CAD';
 let exchangeData = {};
@@ -69,10 +70,11 @@ const Generator = async () => {
     });
 
     // Add metadata
-    exchangeData['_meta'] = { generated_at: new Date().toISOString() };
+    const meta = new Meta(sourceCurrency, 'bankofcanada.ca');
     if (lastDate !== null) {
-        exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(lastDate.concat(' 16:30:00 GMT-0400')).toISOString() };
+        meta.setUpdatedAt(lastDate.concat(' 16:30:00 GMT-0400'));
     }
+    exchangeData['_meta'] = meta;
 
     return exchangeData;
 }

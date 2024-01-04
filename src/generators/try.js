@@ -8,6 +8,7 @@ const https = require('https');
 const crypto = require('crypto');
 const axios = require('axios');
 const { XMLParser } = require('fast-xml-parser');
+const Meta = require('../meta');
 
 const sourceCurrency = 'TRY';
 let exchangeData = {};
@@ -66,10 +67,11 @@ const Generator = async () => {
     });
 
     // Add metadata
-    exchangeData['_meta'] = { generated_at: new Date().toISOString() };
+    const meta = new Meta(sourceCurrency, 'tcmb.gov.tr');
     if (typeof jObj.Tarih_Date?.['@_Date'] === 'string') {
-        exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(jObj.Tarih_Date['@_Date'].concat(' 15:30:00 GMT+0300')).toISOString() };
+        meta.setUpdatedAt(jObj.Tarih_Date['@_Date'].concat(' 15:30:00 GMT+0300'));
     }
+    exchangeData['_meta'] = meta;
 
     return exchangeData;
 }

@@ -8,6 +8,7 @@ const https = require('https');
 const crypto = require('crypto');
 const axios = require('axios');
 const { XMLParser } = require('fast-xml-parser');
+const Meta = require('../meta');
 
 const sourceCurrency = 'DKK';
 let exchangeData = {};
@@ -62,10 +63,11 @@ const Generator = async () => {
     });
 
     // Add metadata
-    exchangeData['_meta'] = { generated_at: new Date().toISOString() };
+    const meta = new Meta(sourceCurrency, 'nationalbanken.dk');
     if (typeof jObj.exchangerates.dailyrates?.['@_id'] === 'string') {
-        exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(jObj.exchangerates.dailyrates['@_id'].concat(' 14:15:00 GMT+0200')).toISOString() };
+        meta.setUpdatedAt(jObj.exchangerates.dailyrates['@_id'].concat(' 14:15:00 GMT+0200'));
     }
+    exchangeData['_meta'] = meta;
 
     return exchangeData;
 }

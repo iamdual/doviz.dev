@@ -8,6 +8,7 @@ const https = require('https');
 const crypto = require('crypto');
 const axios = require('axios');
 const { XMLParser } = require('fast-xml-parser');
+const Meta = require('../meta');
 
 const sourceCurrency = 'EUR';
 let exchangeData = {};
@@ -61,10 +62,11 @@ const Generator = async () => {
     });
 
     // Add metadata
-    exchangeData['_meta'] = { generated_at: new Date().toISOString() };
+    const meta = new Meta(sourceCurrency, 'ecb.europa.eu');
     if (typeof jObj['gesmes:Envelope'].Cube.Cube?.['@_time'] === 'string') {
-        exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(jObj['gesmes:Envelope'].Cube.Cube['@_time'].concat(' 16:00:00 GMT+0100')).toISOString() };
+        meta.setUpdatedAt(jObj['gesmes:Envelope'].Cube.Cube['@_time'].concat(' 16:00:00 GMT+0100'));
     }
+    exchangeData['_meta'] = meta;
 
     return exchangeData;
 }

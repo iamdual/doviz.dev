@@ -2,7 +2,9 @@
   "name": "doviz.dev",
   "version": "0.0.1",
   "scripts": {
-    "generate": "node ./src/generate-api.js && node ./src/generate-docs.js"
+    "generate:api": "node ./src/generate-api.js",
+    "generate:docs": "node ./src/generate-docs.js",
+    "generate": "npm run generate:api && npm run generate:docs"
   },
   "dependencies": {
     "axios": "^1.4.0",

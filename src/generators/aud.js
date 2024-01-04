@@ -8,6 +8,7 @@ const https = require('https');
 const crypto = require('crypto');
 const axios = require('axios');
 const { XMLParser } = require('fast-xml-parser');
+const Meta = require('../meta');
 
 const sourceCurrency = 'AUD';
 let exchangeData = {};
@@ -66,10 +67,11 @@ const Generator = async () => {
     });
 
     // Add metadata
-    exchangeData['_meta'] = { generated_at: new Date().toISOString() };
+    const meta = new Meta(sourceCurrency, 'rba.gov.au');
     if (typeof jObj?.['rdf:RDF']?.['channel']?.['dc:date'] === 'string') {
-        exchangeData['_meta'] = { ...exchangeData['_meta'], updated_at: new Date(jObj['rdf:RDF']['channel']['dc:date']).toISOString() };
+        meta.setUpdatedAt(jObj['rdf:RDF']['channel']['dc:date']);
     }
+    exchangeData['_meta'] = meta;
 
     return exchangeData;
 }
