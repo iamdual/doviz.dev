@@ -29,6 +29,8 @@ The currency code must be lowercase. Supported currencies are listed below.
   "JPYTRY": 0.168983,
   "TRYJPY": 5.917755040447856,
   "_meta": {
+    "base": "TRY",
+    "source": "tcmb.gov.tr",
     "generated_at": "2023-06-18T16:24:03.281Z",
     "updated_at": "2023-06-16T12:30:00.000Z"
   }
@@ -38,13 +40,14 @@ The currency code must be lowercase. Supported currencies are listed below.
 # Supported currencies
 
 | Code | Source            | API Link                      |
-|------|-------------------|-------------------------------|
+| ---- | ----------------- | ----------------------------- |
 | USD  | floatrates.com    | https://doviz.dev/v1/usd.json |
 | EUR  | ecb.europa.eu     | https://doviz.dev/v1/eur.json |
 | TRY  | tcmb.gov.tr       | https://doviz.dev/v1/try.json |
 | AUD  | rba.gov.au        | https://doviz.dev/v1/aud.json |
 | DKK  | nationalbanken.dk | https://doviz.dev/v1/dkk.json |
 | CAD  | bankofcanada.ca   | https://doviz.dev/v1/cad.json |
+| PLN  | nbp.pl            | https://doviz.dev/v1/pln.json |
 
 # F.A.Q.
 
@@ -81,4 +84,4 @@ Please feel free to create pull request or [create an issue](https://github.com/
 
 # License
 
-Apache License 2.0 - [Ekin Karadeniz](https://github.com/iamdual) ©2023
+Apache License 2.0 - [Ekin Karadeniz](https://github.com/iamdual) ©2024
