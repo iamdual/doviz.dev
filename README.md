@@ -67,10 +67,6 @@ The currency code must be lowercase. Supported currencies are listed below.
 
   > Doviz.dev converts data with varying structures from different sources into a standard format.
 
-- **Why would we need this?**
-
-  > Doviz.dev converts data with varying structures from different sources into a standard format.
-
 - **What "doviz" means?**
 
   > "Döviz" (dö·viz) is a Turkish word means "foreign currency".
