@@ -7,20 +7,50 @@
 const https = require('https');
 const crypto = require('crypto');
 const axios = require('axios');
+const cheerio = require('cheerio');
 const { XMLParser } = require('fast-xml-parser');
 const Meta = require('../meta');
 
 const sourceCurrency = 'PLN';
 let exchangeData = {};
 
+const getXMLLink = async () => {
+    const response = await axios({
+        method: 'GET',
+        url: 'https://nbp.pl/statystyka-i-sprawozdawczosc/kursy/tabela-a/',
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.51',
+            'Referer': 'https://nbp.pl'
+        },
+        responseType: 'text',
+        httpsAgent: new https.Agent({
+            rejectUnauthorized: true,
+            secureOptions: crypto.constants.SSL_OP_LEGACY_SERVER_CONNECT,
+        })
+    });
+
+    const $ = cheerio.load(response.data);
+    const matches = $('section a.card-file');
+    if (matches.length === 0) {
+        throw new Error('No XML link found.');
+    }
+    for (const el of matches) {
+        const link = $(el).prop('href');
+        if (link.endsWith('.xml')) {
+            return link;
+        }
+    }
+    throw new Error('No XML link found.');
+}
+
 const Generator = async () => {
 
     const response = await axios({
         method: 'GET',
-        url: 'https://www.nbp.pl/kursy/xml/lasta.xml',
+        url: await getXMLLink(),
         headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.51',
-            'Referer': 'https://www.nbp.pl'
+            'Referer': 'https://nbp.pl'
         },
         responseType: 'text',
         httpsAgent: new https.Agent({
