@@ -13,7 +13,7 @@ class Meta {
     constructor(base, source, updated_at) {
         this.base = base;
         this.source = source;
-        this.created_at = new Date().toISOString();
+        this.generated_at = new Date().toISOString();
 
         if (updated_at) {
             this.setUpdatedAt(updated_at);
