@@ -57,7 +57,7 @@ The currency code must be lowercase. Supported currencies are listed below.
 
 - **Is there any limit?**
 
-  > It depends on GitHub. Currently GitHub Pages bandwidth limit is 100GB monthly, [GitHub says](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). So, please cache the response and use sparingly.
+  > It depends on GitHub. Currently GitHub Pages imposes a soft bandwidth limit of 100GB monthly, [GitHub says](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). So, please cache the response and use sparingly.
 
 - **How often is it updated?**
 
