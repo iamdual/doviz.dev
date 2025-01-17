@@ -48,7 +48,6 @@ The currency code must be lowercase. Supported currencies are listed below.
 | DKK  | nationalbanken.dk | https://doviz.dev/v1/dkk.json |
 | CAD  | bankofcanada.ca   | https://doviz.dev/v1/cad.json |
 | PLN  | nbp.pl            | https://doviz.dev/v1/pln.json |
-| BTC  | binance.com       | https://doviz.dev/v1/btc.json |
 
 # F.A.Q.
 

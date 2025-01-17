@@ -1,7 +1,6 @@
 # Exchange rate sources
 
 ## Central banks
-
 - [European Central Bank](http://www.ecb.europa.eu/)
 - [Central Bank of the Türkiye](https://www.tcmb.gov.tr/)
 - [Reserve Bank of Australia](http://www.rba.gov.au/)
@@ -16,6 +15,4 @@
 - [National Bank of Poland](http://www.nbp.pl/)
 
 ## Third-party services
-
 - [FloatRates](http://www.floatrates.com/)
-- [Binance](https://developers.binance.com/docs/binance-spot-api-docs/faqs/market_data_only)

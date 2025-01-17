@@ -8,7 +8,7 @@ const fs = require('fs');
 const axios = require('axios');
 
 const outputDir = __dirname + '/../public/v1/';
-const generators = ['try', 'eur', 'usd', 'aud', 'dkk', 'cad', 'pln', 'btc'];
+const generators = ['try', 'eur', 'usd', 'aud', 'dkk', 'cad', 'pln'];
 
 if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
