@@ -80,4 +80,4 @@ Please feel free to create pull request or [create an issue](https://github.com/
 
 # License
 
-Apache License 2.0 - [Ekin Karadeniz](https://github.com/iamdual) ©2024
+Apache License 2.0 - [Ekin Karadeniz](https://github.com/iamdual) ©2025
